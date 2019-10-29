@@ -58,10 +58,14 @@ ui <- fluidPage(
                   choices = factor.columns,
                   selected = "Sepal Length"),
       
+      #Adding a title
+      textInput(inputId = "title",
+                label = "Plot Title"),
+      
       actionButton("go", 
                    "Go!",
-                   icon = icon("thumbs-up")) 
-    ),
+                   icon = icon("thumbs-up"))),
+
     
     # Show a plot of iris data frame
     mainPanel(
@@ -83,7 +87,7 @@ server <- function(input, output) {
   # Make the plot
   p_iris <- eventReactive(input$go, {
     ggplot(filt_iris(), aes_string(x = input$xvar, y = input$yvar, colour = input$color)) + 
-      geom_point()
+      geom_point() + ggtitle(input$title)
   })
   
   
