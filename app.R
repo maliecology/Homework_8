@@ -33,7 +33,7 @@ ui <- fluidPage(
   sidebarLayout(
     sidebarPanel(
       
-      # This is a range slider (i.e. there's a max and min). It is set that way by "value" (the starting value), which is a 2-element vector
+      # Adding in a range slider
       sliderInput("sepalrange",
                   "Range of Sepal Length",
                   min = min.sep.length,
@@ -60,7 +60,7 @@ ui <- fluidPage(
       
       actionButton("go", 
                    "Go!",
-                   icon = icon("thumbs-up")) # see available icons at http://fontawesome.io/icons/ and http://getbootstrap.com/components/#glyphicons
+                   icon = icon("thumbs-up")) 
     ),
     
     # Show a plot of iris data frame
