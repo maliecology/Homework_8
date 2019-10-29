@@ -17,19 +17,19 @@ max.sep.length <- max(iris$Sepal.Length)
 # Need a vector of axis variables as characters
 axis_vars <- names(iris)
 
-# Create a character vector of those columns of diamonds that are 
+# Create a character vector of those columns of iris that are indices
 factor.indices <- vapply(iris, is.factor, TRUE) 
 
 factor.columns <- axis_vars[factor.indices]
 
 
-# Define UI for application that draws a histogram
+# Define UI for application that draws a plot
 ui <- fluidPage(
   
   # Application title
   titlePanel("Iris Viewer"),
   
-  # Sidebar with a slider input for number of bins 
+  # Sidebar with a slider input 
   sidebarLayout(
     sidebarPanel(
       
@@ -74,7 +74,7 @@ ui <- fluidPage(
   )
 )
 
-# Define server logic required to draw a histogram
+# Define server logic required to draw a plot
 server <- function(input, output) {
   
   # Filter iris based on sepal length 
