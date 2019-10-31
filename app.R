@@ -27,15 +27,15 @@ factor.columns <- axis_vars[factor.indices]
 ui <- fluidPage(
   
   # Application title
-  titlePanel("Iris Viewer"),
+  titlePanel("Iris Dataset Viewer"),
   
   # Sidebar with a slider input 
   sidebarLayout(
     sidebarPanel(
       
       # Adding in a range slider
-      sliderInput("sepalrange",
-                  "Range of Sepal Length",
+      sliderInput(inputId = "sepalrange",
+                  label = "Range of Sepal Length",
                   min = min.sep.length,
                   max = max.sep.length,
                   value = c(min.sep.length, max.sep.length)),
